@@ -1,0 +1,39 @@
+{
+  "name": "async-api-example",
+  "version": "1.0.0",
+  "description": "A starter async Node application",
+  "scripts": {
+    "start": "node src/server",
+    "start:dev": "./node_modules/nodemon/bin/nodemon.js src/server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jongear/async-api-example-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jongear/async-api-example-js/issues"
+  },
+  "homepage": "https://github.com/jongear/async-api-example-js#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "joi": "^14.3.1",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.2.8",
+    "swagger-ui-express": "^4.0.2",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "nodemon": "^1.18.10",
+    "prettier": "^1.16.4"
+  }
+}
