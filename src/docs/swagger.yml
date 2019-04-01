@@ -1,0 +1,90 @@
+swagger: '2.0'
+info:
+  description: 'This is a sample server for a Todo List application'
+  version: '1.0.0'
+  title: 'Todo List API'
+host: 'localhost:3000'
+basePath: '/api'
+schemes:
+  - 'http'
+paths:
+  /todos:
+    get:
+      tags:
+        - Todo
+      summary: 'List all todos'
+      responses:
+        200:
+          description: 'Status 200'
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Todo'
+    post:
+      tags:
+        - Todo
+      summary: 'Add a new todo to the list'
+      parameters:
+        - name: 'body'
+          in: 'body'
+          required: true
+          schema:
+            $ref: '#/definitions/Todo'
+      responses:
+        200:
+          description: 'Status 201'
+          schema:
+            $ref: '#/definitions/Todo'
+  /todos/{todoId}:
+    get:
+      tags:
+        - Todo
+      summary: 'List a single todo'
+      parameters:
+        - name: todoId
+          in: path
+          required: true
+          type: integer
+      responses:
+        200:
+          description: 'Status 200'
+          schema:
+            $ref: '#/definitions/Todo'
+    put:
+      tags:
+        - Todo
+      parameters:
+        - name: todoId
+          in: path
+          required: true
+          type: integer
+        - name: 'body'
+          in: 'body'
+          required: true
+          schema:
+            $ref: '#/definitions/Todo'
+      responses:
+        200:
+          description: 'Status 200'
+          schema:
+            $ref: '#/definitions/Todo'
+    delete:
+      tags:
+        - Todo
+      summary: 'List a single todo'
+      parameters:
+        - name: todoId
+          in: path
+          required: true
+          type: integer
+      responses:
+        200:
+          description: 'Status 200'
+definitions:
+  Todo:
+    type: 'object'
+    properties:
+      test:
+        type: 'string'
+      complete:
+        type: 'boolean'
