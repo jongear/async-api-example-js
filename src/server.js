@@ -25,11 +25,6 @@ const setupServer = async () => {
   app.use(express.urlencoded({ extended: false }));
   app.use(cookieParser());
 
-  app.use((req, res, next) => {
-    res.header('Content-Type', 'application/json');
-    next();
-  });
-
   // Add CORS support for localhost:8080 -hub-ui
   app.use((req, res, next) => {
     // Website you wish to allow to connect
@@ -55,7 +50,14 @@ const setupServer = async () => {
     next();
   });
 
+  app.use(express.static('src/docs'));
+
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+  app.use((req, res, next) => {
+    res.header('Content-Type', 'application/json');
+    next();
+  });
 
   app.get('/', (req, res, next) => {
     res.redirect('/api-docs/swagger');
