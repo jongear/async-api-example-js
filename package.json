@@ -33,11 +33,11 @@
       }
     },
     "collectCoverageFrom": [
-      "src/**/*.{js}",
-      "!**src/config/*.{js}",
-      "!**src/config/*/*.{js}",
-      "!**src/docs/*.{js}",
-      "!**src/models/*.{js}"
+      "src/**/*.js",
+      "!**src/config/*.js",
+      "!**src/config/*/*.js",
+      "!**src/docs/*.js",
+      "!**src/models/*.js"
     ]
   },
   "dependencies": {
