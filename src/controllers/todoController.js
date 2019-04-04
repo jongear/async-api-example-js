@@ -58,6 +58,22 @@ class TodoController {
     return res.json(dbTodo);
   }
 
+  async update2(req, res, next) {
+    const dbTodo = await db.Todo.update(
+      {
+        text: req.body.text,
+        complete: req.body.complete
+      },
+      {
+        where: {
+          id: req.params.todoId
+        }
+      }
+    );
+
+    return res.json(dbTodo);
+  }
+
   async delete(req, res, next) {
     const dbTodo = await db.Todo.destroy({
       where: {
